@@ -1,6 +1,6 @@
 <%-- 
-    Document   : add
-    Created on : 08/04/2021, 09:12:21 AM
+    Document   : edit
+    Created on : 08/04/2021, 11:50:48 AM
     Author     : jorge
 --%>
 
@@ -10,13 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <%@ include file="/Presentacion/head.jsp" %>
+        <%@ include file="/presentacion/head.jsp" %>
     </head>
     <body>
         <div class="m-0 vh-100 row justify-content-center align-items-center" >
             <div class="row justify-content-center align-items-center minh-100">
                 <div class="col-lg-4 ">
-                    <p class="h1">Registro Avion</p><br><br>
+                    <p class="h1">Editar Avion</p><br><br>
                     <form name="form_registro" id="form_registro" onsubmit="return validaDatos()" action="ControladorAvion" >
                         <div class="row">
                             <div class="col">
@@ -51,7 +51,9 @@
                             </div>
                         </div>
                         <br>
-                        <input class="btn btn-outline-success" type="submit" name="accion" value="Agregar">
+                        <input class="btn btn-outline-success" type="submit" name="accion" value="Actualizar">
+                        <a class="btn btn-outline-danger" href="ControladorAvion?accion=listar" >Regresar</a>
+                       
                     </form>
                 </div>
             </div>
