@@ -43,7 +43,7 @@
         </div>
         <!-- FIN CARROUSEL -->
         <!-- BUSQUEDA VUELOS -->
-        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <!--<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
             <div class="col-md-5 p-lg-2 mx-auto my-0">
                 <h2 class="display-5 fw-normal">Sistema de Boletos Aéreos</h2>
                 <div class="row g-2">
@@ -70,6 +70,7 @@
                 </div>
             </div>
         </div>
+        -->
         <!-- FIN BUSQUEDA VUELOS -->
     </body>
 </html>
