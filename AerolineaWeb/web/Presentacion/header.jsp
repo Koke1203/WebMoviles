@@ -31,10 +31,13 @@
 
         <%if (usuario.getTipo() == 0) {%>
         <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><%=usuario.getIdUsuario()%></a>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><%=usuario.getIdUsuario()%></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="ControladorAvion?accion=list" tabindex="-1" aria-disabled="true">Gestión Aviones</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="ControladorWAdministrador?accion=GestionarAdministradores" tabindex="-1" aria-disabled="true">Gestión Administradores</a>
         </li>
         <%} else if (usuario.getTipo() == 1) {%>
         <li class="nav-item">    
@@ -47,3 +50,6 @@
         <%}%>
     </ul>
 </nav>
+    
+
+

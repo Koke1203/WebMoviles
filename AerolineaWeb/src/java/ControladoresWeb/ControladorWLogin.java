@@ -37,6 +37,7 @@ public class ControladorWLogin extends HttpServlet {
     private final String INICIO_ADMINISTRADOR = "/Presentacion/Administrador/inicio.jsp";
     private final String INICIO_CLIENTE = "/Presentacion/Cliente/inicio.jsp";
     private final String CONSULTA_VUELOS = "/Presentacion/General/list.jsp";
+    private final String INICIO_SESION = "/Presentacion/Login/login.jsp";
     private final String REGISTRO_CLIENTE = "/Presentacion/Registro/registro.jsp";
     
     
@@ -102,7 +103,7 @@ public class ControladorWLogin extends HttpServlet {
                             break;
                     }
                 }else{//Contraseña inválida
-                
+                    acceso = INICIO_SESION;
                 }
             }          
             //System.out.printf("Identificacion %s contrasenia %s \n", identificacion, contrasenia);

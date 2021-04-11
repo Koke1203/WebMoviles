@@ -16,6 +16,7 @@
         <!--NAVBAR-->
         <%@ include file="/Presentacion/header.jsp" %>
         <!-- FIN NAVBAR -->
-        <h1>Administrador</h1>
+        
     </body>
+
 </html>
