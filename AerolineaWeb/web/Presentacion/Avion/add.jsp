@@ -17,7 +17,7 @@
             <div class="row justify-content-center align-items-center minh-100">
                 <div class="col-lg-4 ">
                     <p class="h1">Registro Avion</p><br><br>
-                    <form name="form_registro" id="form_registro" onsubmit="return validaDatos()" action="ControladorAvion" >
+                    <form name="form_registro" id="form_registro" action="ControladorAvion" >
                         <div class="row">
                             <div class="col">
                               <input class="form-control" type="text" name="txtIdAviones" placeholder="ID Avion" onkeypress="return solonumeros(event)" >

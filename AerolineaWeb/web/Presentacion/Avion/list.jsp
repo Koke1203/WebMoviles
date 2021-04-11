@@ -4,13 +4,19 @@
     Author     : jorge
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.Modelo"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="Modelo.Avion"%>
+<%@page import="java.util.List"%>
+<%@page import="AccesoBD.AvionBD"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <%@ include file="/presentacion/head.jsp" %>
+        <%@ include file="/Presentacion/head.jsp" %>
     </head>
     <body>
         <div class="container">
@@ -26,27 +32,29 @@
                                 <th scope="col">Year</th>
                             </tr>
                         </thead>
-                       <!--%
-                            CuentasFavoritasDAO dao = new CuentasFavoritasDAO();
-                            List<CuentasFavoritas> list = dao.listar();
-                            Iterator<CuentasFavoritas> iter = list.iterator();
-                            CuentasFavoritas fav = null;
+                       <%   
+                            ArrayList<Avion> avionList = new ArrayList();
+                            if(session.getAttribute("listaAviones")!=null){
+                                avionList = (ArrayList)session.getAttribute("listaAviones");
+                            }
+                            Avion avion = null;
+                            Iterator<Avion> iter = avionList.iterator();
                             while (iter.hasNext()) {
-                                fav = iter.next();
-                                if(fav.getUsuario_Cedula() == usuario.getCedula()){
-                        %--> 
+                                avion = iter.next();
+                                
+                        %> 
                         <tbody>
                             <tr>
-                                <td><!--%= fav.getUsuario_Cedula()%--></td>
-                                <td><!--%= fav.getCuentas_NumCuentas()%--></td>
-                                <td><!--%= fav.getCuentas_NumCuentas()%--></td>
-                                <td><!--%= fav.getCuentas_NumCuentas()%--></td>
+                                <td><%= avion.getIdentificador()%></td>
+                                <td><%= avion.getMarca()%></td>
+                                <td><%= avion.getModelo()%></td>
+                                <td><%= avion.getAnio()%></td>
                                 <td>
-                                    <a href="ControladorAvion?accion=eliminar&id=<!--%=fav.getUsuario_Cedula()%-->">Eliminar</a>
-                                    <a href="ControladorAvion?accion=modificar&id=<!--%=fav.getCuentas_NumCuentas()%-->">Modificar</a>
+                                    <a href="ControladorAvion?accion=eliminar&id=<%=avion.getIdentificador()%>">Eliminar</a>
+                                    <a href="ControladorAvion?accion=editar&id=<%=avion.getIdentificador()%>">Modificar</a>
                                 </td>
                             </tr>
-                          <!--  <%}}%>-->
+                           <%}%>
                         </tbody>
                     </table>
                     <a class="btn btn-outline-danger"  href="ControladorAvion?accion=add">Agregar Nuevo</a>

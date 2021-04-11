@@ -16,6 +16,11 @@
         <div class="m-0 vh-100 row justify-content-center align-items-center" >
             <div class="row justify-content-center align-items-center minh-100">
                 <div class="col-lg-4 ">
+                     <%
+                    //UsuarioDAO dao=new UsuarioDAO();
+                    //int id=Integer.parseInt((String)request.getAttribute("idavion"));
+                    //Usuario p=(Usuario)dao.list(id);
+                    %>
                     <p class="h1">Editar Avion</p><br><br>
                     <form name="form_registro" id="form_registro" onsubmit="return validaDatos()" action="ControladorAvion" >
                         <div class="row">
