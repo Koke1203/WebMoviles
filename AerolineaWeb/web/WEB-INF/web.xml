@@ -8,6 +8,10 @@
         <servlet-name>ControladorWCliente</servlet-name>
         <servlet-class>ControladoresWeb.ControladorWCliente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorWAdministrador</servlet-name>
+        <servlet-class>ControladoresWeb.ControladorWAdministrador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorWLogin</servlet-name>
         <url-pattern>/ControladorWLogin</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ControladorWCliente</servlet-name>
         <url-pattern>/ControladorWCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorWAdministrador</servlet-name>
+        <url-pattern>/ControladorWAdministrador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

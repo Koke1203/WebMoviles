@@ -9,6 +9,7 @@ import AccesoBD.ClienteBD;
 import AccesoBD.UsuarioBD;
 import Modelo.Cliente;
 import Modelo.DetalleHistoricoCompra;
+import Modelo.DetalleVuelo;
 import Modelo.Modelo;
 import Modelo.Usuario;
 import java.io.IOException;
@@ -35,7 +36,9 @@ public class ControladorWLogin extends HttpServlet {
     private final String INICIO = "index.jsp";
     private final String INICIO_ADMINISTRADOR = "/Presentacion/Administrador/inicio.jsp";
     private final String INICIO_CLIENTE = "/Presentacion/Cliente/inicio.jsp";
+    private final String CONSULTA_VUELOS = "/Presentacion/General/list.jsp";
     private final String REGISTRO_CLIENTE = "/Presentacion/Registro/registro.jsp";
+    
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -139,6 +142,12 @@ public class ControladorWLogin extends HttpServlet {
             } catch (ParseException ex) {
                 Logger.getLogger(ControladorWLogin.class.getName()).log(Level.SEVERE, null, ex);
             }   
+        }else if(action.equalsIgnoreCase("ConsultarVuelos")){
+            
+            ArrayList<DetalleVuelo> detalleVuelos = modelo.listarDetalleVuelos();
+            session.setAttribute("detalleVuelos",detalleVuelos);
+            
+            acceso = CONSULTA_VUELOS;
         }
         
         RequestDispatcher vista = request.getRequestDispatcher(acceso);

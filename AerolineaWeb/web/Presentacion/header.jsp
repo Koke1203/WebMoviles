@@ -15,7 +15,7 @@
   <ul class="navbar-nav">
     <%if(usuario == null){%>  
     <li class="nav-item active">
-      <a class="nav-link" href="#">Consulta Vuelos</a>
+      <a class="nav-link" href="ControladorWLogin?accion=ConsultarVuelos">Consulta Vuelos</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="Presentacion/Login/login.jsp">Login</a>

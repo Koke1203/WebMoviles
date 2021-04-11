@@ -41,6 +41,17 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
+            <div class="col-md-5 p-lg-2 mx-auto my-0">
+                <h2 class="display-5 fw-normal">Sistema de Boletos Aéreos</h2>
+                <br>
+                <p class="h4">En este sistema usted podrá: </p>
+                <p class="h5">&bull;Consultar vuelos</p>
+                <p class="h5">&bull;Comprar vuelos</p>
+                <p class="h5">&bull;Observar el histórico de compras</p>
+            </div>
+        </div>
+        
         <!-- FIN CARROUSEL -->
         <!-- BUSQUEDA VUELOS -->
         <!--<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
