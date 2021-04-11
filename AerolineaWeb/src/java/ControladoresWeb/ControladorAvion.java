@@ -61,12 +61,8 @@ public class ControladorAvion extends HttpServlet {
             throws ServletException, IOException {
         String acceso = "";
         String action = request.getParameter("accion");
-        HttpSession session = request.getSession(true);
         
         if (action.equalsIgnoreCase("list")) {
-            
-            ArrayList<Avion> listAvion = modelo.listarAviones();
-            session.setAttribute("listaAviones", listAvion);
             acceso = listarAvion;
         } else if (action.equalsIgnoreCase("add")) {
             acceso = addAvion;

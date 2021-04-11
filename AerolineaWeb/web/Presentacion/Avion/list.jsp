@@ -32,13 +32,11 @@
                                 <th scope="col">Year</th>
                             </tr>
                         </thead>
-                       <%   
-                            ArrayList<Avion> avionList = new ArrayList();
-                            if(session.getAttribute("listaAviones")!=null){
-                                avionList = (ArrayList)session.getAttribute("listaAviones");
-                            }
+                       <%   Modelo modelo = new Modelo();
+                            ArrayList<Avion> listAvion = modelo.listarAviones();
+                         
                             Avion avion = null;
-                            Iterator<Avion> iter = avionList.iterator();
+                            Iterator<Avion> iter = listAvion.iterator();
                             while (iter.hasNext()) {
                                 avion = iter.next();
                                 
@@ -50,14 +48,14 @@
                                 <td><%= avion.getModelo()%></td>
                                 <td><%= avion.getAnio()%></td>
                                 <td>
-                                    <a href="ControladorAvion?accion=eliminar&id=<%=avion.getIdentificador()%>">Eliminar</a>
-                                    <a href="ControladorAvion?accion=editar&id=<%=avion.getIdentificador()%>">Modificar</a>
+                                    <a class="btn btn-outline-danger" href="ControladorAvion?accion=eliminar&id=<%=avion.getIdentificador()%>">Eliminar</a>
+                                    <a class="btn btn-outline-warning" href="ControladorAvion?accion=editar&id=<%=avion.getIdentificador()%>">Modificar</a>
                                 </td>
                             </tr>
                            <%}%>
                         </tbody>
                     </table>
-                    <a class="btn btn-outline-danger"  href="ControladorAvion?accion=add">Agregar Nuevo</a>
+                    <a class="btn btn-outline-success"  href="ControladorAvion?accion=add">Agregar Nuevo</a>
                 </div>
             </div>
         </div>

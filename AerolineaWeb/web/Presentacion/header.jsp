@@ -23,6 +23,9 @@
         <li class="nav-item">
             <a class="nav-link" href="Presentacion/Registro/registro.jsp">Registrarse</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="ControladorAvion?accion=list" tabindex="-1" aria-disabled="true">Gestión Aviones</a>
+        </li>
 
         <%} else {%>
 

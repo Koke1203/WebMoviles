@@ -17,37 +17,37 @@
             <div class="row justify-content-center align-items-center minh-100">
                 <div class="col-lg-4 ">
                     <p class="h1">Registro Avion</p><br><br>
-                    <form name="form_registro" id="form_registro" action="ControladorAvion" >
+                    <form name="form_avion" id="form_avion" onsubmit="return validaDatosAvion();" action="ControladorAvion" >
                         <div class="row">
                             <div class="col">
-                              <input class="form-control" type="text" name="txtIdAviones" placeholder="ID Avion" onkeypress="return solonumeros(event)" >
+                                <input class="form-control" type="text" name="txtIdAviones" placeholder="ID Avion"  >
                             </div>
                             <div class="col">
-                              <input class="form-control" type="text" name="txtMarca" placeholder="Marca" id="nombre" onkeypress="return sololetras(event)">
+                                <input class="form-control" type="text" name="txtMarca" placeholder="Marca" id="nombre">
                             </div> 
                         </div>
                         <br>
                         <div class="row">
                             <div class="col">
-                                <input class="form-control" type="text" name="txtModelo" placeholder="Modelo" id="nombre" onkeypress="return sololetras(event)">
+                                <input class="form-control" type="text" name="txtModelo" placeholder="Modelo" id="nombre" >
                             </div>
                             <div class="col">
-                              <input class="form-control" type="text" name="txtYear" placeholder="Year" id="year" onkeypress="return sololetras(event)">
-                            </div> 
-                        </div>
-                         <br>
-                         <div class="row">
-                            <div class="col">
-                                <input class="form-control" type="text" name="txtAsientos" placeholder="#Asientos" onkeypress="return sololetras(event)">
-                            </div>
-                            <div class="col">
-                              <input class="form-control" type="text" name="txtFilas" placeholder="#Filas" id="year" onkeypress="return sololetras(event)">
+                                <input class="form-control" type="text" name="txtYear" placeholder="Year" id="year" >
                             </div> 
                         </div>
                         <br>
-                         <div class="row">
+                        <div class="row">
                             <div class="col">
-                                <input class="form-control" type="text" name="txtPasajeros" placeholder="#Pasajeros" onkeypress="return sololetras(event)">
+                                <input class="form-control" type="text" name="txtAsientos" placeholder="#Asientos" >
+                            </div>
+                            <div class="col">
+                                <input class="form-control" type="text" name="txtFilas" placeholder="#Filas" id="year" >
+                            </div> 
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control" type="text" name="txtPasajeros" placeholder="#Pasajeros" >
                             </div>
                         </div>
                         <br>
