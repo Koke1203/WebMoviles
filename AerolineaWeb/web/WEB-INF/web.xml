@@ -12,6 +12,10 @@
         <servlet-name>ControladorWAdministrador</servlet-name>
         <servlet-class>ControladoresWeb.ControladorWAdministrador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorAvion</servlet-name>
+        <servlet-class>ControladoresWeb.ControladorAvion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorWLogin</servlet-name>
         <url-pattern>/ControladorWLogin</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>ControladorWAdministrador</servlet-name>
         <url-pattern>/ControladorWAdministrador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorAvion</servlet-name>
+        <url-pattern>/ControladorAvion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -10,8 +10,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <%@ include file="/Presentacion/head.jsp" %>
     </head>
     <body>
+        <!--NAVBAR-->
+        <%@ include file="/Presentacion/header.jsp" %>
+        <!-- FIN NAVBAR -->
         <h1>Administrador</h1>
     </body>
 </html>

@@ -12,29 +12,35 @@
 %>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class="navbar-nav">
-    <%if(usuario == null){%>  
-    <li class="nav-item active">
-      <a class="nav-link" href="ControladorWLogin?accion=ConsultarVuelos">Consulta Vuelos</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="Presentacion/Login/login.jsp">Login</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="Presentacion/Registro/registro.jsp">Registrarse</a>
-    </li>
-    
-    <%}else{%>
-    <li class="nav-item">
-        <%if(usuario.getTipo() == 0){%>
-            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><%=usuario.getIdUsuario()%></a>
-        <%}else if(usuario.getTipo() == 1){%>
-            <a class="nav-link" href="ControladorWCliente?accion=MostrarPerfil" tabindex="-1" aria-disabled="true"><%=cliente.getNombre() +" "+ cliente.getPrimerApellido()%></a>
-        <%}%>
-    </li>
+    <ul class="navbar-nav">
+        <%if (usuario == null) {%>  
+        <li class="nav-item active">
+            <a class="nav-link" href="ControladorWLogin?accion=ConsultarVuelos">Consulta Vuelos</a>
+        </li>
         <li class="nav-item">
-      <a class="nav-link" href="ControladorWLogin?accion=Cerrar Sesión">Cerrar Sesión</a>
-    </li>
-    <%}%>
-  </ul>
+            <a class="nav-link" href="Presentacion/Login/login.jsp">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Presentacion/Registro/registro.jsp">Registrarse</a>
+        </li>
+
+        <%} else {%>
+
+        <%if (usuario.getTipo() == 0) {%>
+        <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><%=usuario.getIdUsuario()%></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="ControladorAvion?accion=list" tabindex="-1" aria-disabled="true">Gestión Aviones</a>
+        </li>
+        <%} else if (usuario.getTipo() == 1) {%>
+        <li class="nav-item">    
+            <a class="nav-link" href="ControladorWCliente?accion=MostrarPerfil" tabindex="-1" aria-disabled="true"><%=cliente.getNombre() + " " + cliente.getPrimerApellido()%></a>
+        </li>
+        <%}%>
+        <li class="nav-item">
+            <a class="nav-link" href="ControladorWLogin?accion=Cerrar Sesión">Cerrar Sesión</a>
+        </li>
+        <%}%>
+    </ul>
 </nav>

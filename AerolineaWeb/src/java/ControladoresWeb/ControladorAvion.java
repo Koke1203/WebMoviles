@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ControladoresWeb;
 
 import AccesoBD.AvionBD;
 import Excepciones.GlobalException;
 import Modelo.Avion;
-import Modelo.Cliente;
 import Modelo.Modelo;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,7 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.apache.tomcat.jni.SSLContext;
 
 /**
  *
@@ -29,7 +22,7 @@ import org.apache.tomcat.jni.SSLContext;
  */
 public class ControladorAvion extends HttpServlet {
 
-    String listarAvion = "Presentacion/Avion/list.jsp";
+    String listarAvion = "/Presentacion/Avion/list.jsp";
     String addAvion = "Presentacion/Avion/add.jsp";
     String editAvion = "Presentacion/Avion/edit.jsp";
     Avion avion = new Avion();
@@ -66,7 +59,6 @@ public class ControladorAvion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
         String acceso = "";
         String action = request.getParameter("accion");
         HttpSession session = request.getSession(true);
