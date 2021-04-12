@@ -3,6 +3,131 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+function validarLogin() {
+    var idUsuario = document.form_login.txtIdentificacion;
+    var contrasenia = document.form_login.passContrasenia;
+    
+  
+    if (idUsuario.value == "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingrese su identificación',
+        })
+        return false;
+    }
+    if (contrasenia.value == "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingrese la contraseña',
+        })
+        return false;
+    }
+}
+
+function validarRegistroCliente() {
+    var idCliente = document.form_registro.txtIdentificacion;
+    var nombre = document.form_registro.txtNombre;
+    var primerApellido = document.form_registro.txtPrimerApellido;
+    var segundoApellido = document.form_registro.txtSegundoApellido;
+    var fechaNacimiento = document.form_registro.dateFechaNacimiento;
+    var correo = document.form_registro.emailCorreo;
+    var direccion = document.form_registro.txtDireccion;
+    var telefono = document.form_registro.telTelefono;
+    var celular = document.form_registro.telCelular;
+    var contrasenia = document.form_registro.passConstrasenia;
+    
+  
+    if (idCliente.value == "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingrese su identificación',
+        })
+        return false;
+    }
+
+    if (nombre.value == "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingrese el nombre',
+        })
+        return false;
+    }
+
+    if (primerApellido.value == "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingrese el primer apellido',
+        })
+        return false;
+    }
+    
+    if (segundoApellido.value == "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingrese el segundo apellido',
+        })
+        return false;
+    }
+
+    if (fechaNacimiento.value == "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingrese la fecha de nacimiento',
+        })
+        return false;
+    }
+
+    if (correo.value == "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingrese su correo',
+        })
+        return false;
+    }
+    if (direccion.value == "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingrese la dirección',
+        })
+        return false;
+    }
+    if (telefono.value == "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingrese el teléfono',
+        })
+        return false;
+    }
+    if (celular.value == "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingrese el celular',
+        })
+        return false;
+    }
+    if (contrasenia.value == "") {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingrese la contraseña',
+        })
+        return false;
+    }
+}
+
 function validaDatosAvion() {
     var idAvion = document.form_avion.txtIdAviones;
     var marca = document.form_avion.txtMarca;

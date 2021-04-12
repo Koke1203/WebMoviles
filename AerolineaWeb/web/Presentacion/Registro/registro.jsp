@@ -22,55 +22,55 @@
             <div class="row justify-content-center align-items-center minh-100">
                 <div class="col-lg-4 ">
                     <p class="h1">Registro Cliente</p><br><br>
-                    <form name="form_registro" id="form_registro" onsubmit="return validaDatos()" action="ControladorWLogin" >
+                    <form name="form_registro" id="form_registro" onsubmit="return validarRegistroCliente();" action="ControladorWLogin" >
                         <div class="row">
                             <div class="col">
-                                <input class="form-control" type="text" name="txtIdentificacion" placeholder="Identificacion" id="identificacion" onkeypress="return solonumeros(event)" required>
+                                <input class="form-control" type="text" name="txtIdentificacion" placeholder="Identificacion" id="identificacion">
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col">
-                                <input class="form-control" type="text" name="txtNombre" placeholder="Nombre" id="nombre" onkeypress="return sololetras(event)" required>
+                                <input class="form-control" type="text" name="txtNombre" placeholder="Nombre" id="nombre">
                             </div> 
                             <div class="col">
-                                <input class="form-control" type="text" name="txtPrimerApellido" placeholder="Primer Apellido" id="primerApellido" onkeypress="return solonumeros(event)" required>
+                                <input class="form-control" type="text" name="txtPrimerApellido" placeholder="Primer Apellido" id="primerApellido">
                             </div>
                             <div class="col">
-                                <input class="form-control" type="text" name="txtSegundoApellido" placeholder="Segundo Apellido" id="segundoApellido" onkeypress="return sololetras(event)" required>
-                            </div> 
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col">
-                                <input class="form-control" type="date" name="dateFechaNacimiento"  id="fechaNacimiento" required>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col">
-                                <input class="form-control" type="email" name="emailCorreo"  placeholder="Correo electrónico" id="correo" required>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col">
-                                <input class="form-control" type="text" name="txtDireccion" placeholder="Dirección" id="direccion" onkeypress="return sololetras(event)" required>
+                                <input class="form-control" type="text" name="txtSegundoApellido" placeholder="Segundo Apellido" id="segundoApellido">
                             </div> 
                         </div>
                         <br>
                         <div class="row">
                             <div class="col">
-                                <input class="form-control" type="tel" name="telTelefono" placeholder="Teléfono" id="telefono" pattern="2[0-9]{7}" onkeypress="return solonumeros(event)" required>
-                            </div>
-                            <div class="col">
-                                <input class="form-control" type="tel" name="telCelular" placeholder="Celular" id="celular" pattern="[5678][0-9]{7}" onkeypress="return solonumeros(event)" required>
+                                <input class="form-control" type="date" name="dateFechaNacimiento"  id="fechaNacimiento">
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col">
-                                <input class="form-control" type="password" name="passConstrasenia" placeholder="Contraseña" id="contrasenia" required>
+                                <input class="form-control" type="email" name="emailCorreo"  placeholder="Correo electrónico" id="correo">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control" type="text" name="txtDireccion" placeholder="Dirección" id="direccion">
+                            </div> 
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control" type="tel" name="telTelefono" placeholder="Teléfono" id="telefono" pattern="2[0-9]{7}">
+                            </div>
+                            <div class="col">
+                                <input class="form-control" type="tel" name="telCelular" placeholder="Celular" id="celular" pattern="[5678][0-9]{7}">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control" type="password" name="passConstrasenia" placeholder="Contraseña" id="contrasenia">
                             </div>
                         </div>
                         <br>

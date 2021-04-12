@@ -19,9 +19,9 @@
         <div class="m-0 vh-100 row justify-content-center align-items-center">
             <div class="row justify-content-center align-items-center minh-100">
                 <div class="col-lg-4 ">
-    
-    
-                    <div class="card mb-3" style="max-width: 540px;">
+
+
+                    <div class="card mb-3" >
                         <div class="row g-0 justify-content-center align-items-center">
                             <div class="col-md-3">
                                 <img src="Imagenes/login.png" alt="...">
@@ -29,23 +29,20 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Inicio de Sesión</h5>
-                                    <form name="form_login" id="form_login" action="ControladorWLogin">
+                                    <form name="form_login" id="form_login" onsubmit="return validarLogin();" action="ControladorWLogin" >
                                         <div class="row">
                                             <div class="col">
-                                                <input class="form-control" type="text" name="txtIdentificacion"
-                                                       placeholder="Identificación" id="identificacion" value=""
-                                                    onkeypress="return solonumeros(event)" required>
+                                                <input class="form-control" type="text" name="txtIdentificacion" placeholder="Identificación" id="identificacion" value="">
                                             </div>
                                         </div>
                                         <br>
                                         <div class="row">
                                             <div class="col">
-                                                <input class="form-control" type="password" name="passContrasenia" id="contrasenia" value="" required>
+                                                <input class="form-control" type="password" name="passContrasenia" id="contrasenia" value="" placeholder="Contraseña">
                                             </div>
                                         </div>
                                         <br>
-                                        <input class="btn btn-outline-success" type="submit" name="accion"
-                                            value="Inciar Sesión">
+                                        <input class="btn btn-outline-success" type="submit" name="accion" value="Inciar Sesión">
                                     </form>
                                 </div>
                             </div>

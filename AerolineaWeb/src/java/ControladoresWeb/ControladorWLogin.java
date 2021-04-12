@@ -105,8 +105,9 @@ public class ControladorWLogin extends HttpServlet {
                 }else{//Contraseña inválida
                     acceso = INICIO_SESION;
                 }
-            }          
-            //System.out.printf("Identificacion %s contrasenia %s \n", identificacion, contrasenia);
+            }else{
+                acceso = INICIO_SESION;
+            }
         }else if(action.equalsIgnoreCase("Cerrar Sesión")){
             session.removeAttribute("usuario");
             session.invalidate();

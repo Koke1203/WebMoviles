@@ -8,6 +8,7 @@
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="Modelo.DetalleVuelo"%>
+<%@page import="Modelo.Cliente"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -28,6 +29,7 @@
             if(session.getAttribute("detalleVuelos") != null){
                 detalleVuelos = (ArrayList<DetalleVuelo>) session.getAttribute("detalleVuelos");
             }
+            
         %>
         
         <div class="container">
@@ -69,7 +71,9 @@
                                 <td><%= regreso%></td>
                                 <td><%= detVuel.getPrecio()%></td>
                                 <td><%= detVuel.getHora()%></td>
-                                <td><a href="#">Comprar</a> </td>
+                                <%if(session.getAttribute("cliente") != null){%>
+                                <td><a class="btn btn-outline-success" href="ControladorWCliente?accion=Comprar&idVuelo=<%= detVuel.getIdVuelo()%>">Comprar</a> </td>
+                                <%}%>
                             </tr>
                             
                             <%
