@@ -5,11 +5,14 @@
  */
 package ControladoresWeb;
 
+import Modelo.Avion;
 import Modelo.Cliente;
+import Modelo.DetalleAsiento;
 import Modelo.DetalleHistoricoCompra;
 import Modelo.HistoricoCompra;
 import Modelo.Modelo;
 import Modelo.Usuario;
+import Modelo.Vuelo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -34,6 +37,7 @@ public class ControladorWCliente extends HttpServlet {
     private final String MOSTRAR_PERFIL = "/Presentacion/Cliente/editProfile.jsp";
     private final String INICIO_CLIENTE = "/Presentacion/Cliente/inicio.jsp";
     private final String LOGIN = "/Presentacion/Login/login.jsp";
+    private final String SELECCION_ASIENTO = "/Presentacion/Asientos/asientos.jsp";
     
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -101,25 +105,52 @@ public class ControladorWCliente extends HttpServlet {
             }
         } else if (action.equalsIgnoreCase("Comprar")) {
             if (session.getAttribute("cliente") != null) {
-                Cliente cliente = (Cliente) session.getAttribute("cliente");
                 String idVuelo = "";
                 if (request.getParameter("idVuelo") != null) {
                     idVuelo = request.getParameter("idVuelo");
 
-                    HistoricoCompra historico = new HistoricoCompra(idVuelo, cliente.getIdCliente());
+                    
                     try {
-                        modelo.insertarHistoricoCompra(historico);
-                        ArrayList<DetalleHistoricoCompra> historicoCompras = modelo.listarDetalleHistoricoComprasCliente(cliente.getIdCliente());
-                        session.setAttribute("historicoCompras", historicoCompras);
+                        //modelo.insertarHistoricoCompra(historico);
+                        Vuelo vuelo = modelo.consultarVuelo(idVuelo);
+                        Avion avion = modelo.consultarAvion(vuelo.getAvion());
+                        //ArrayList<DetalleHistoricoCompra> historicoCompras = modelo.listarDetalleHistoricoComprasCliente(cliente.getIdCliente());
+                        ArrayList<DetalleAsiento> detalleAsientos = modelo.listarDetalleAsientosVuelo(idVuelo);
+                        //session.setAttribute("historicoCompras", historicoCompras);
+                        session.setAttribute("vueloSeleccionado", vuelo);
+                        session.setAttribute("avionSeleccionado", avion);
+                        session.setAttribute("detalleAsientos", detalleAsientos);
                         
                     } catch (Exception ex) {
                         Logger.getLogger(ControladorWCliente.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
-                acceso =MOSTRAR_PERFIL ;
+                acceso = SELECCION_ASIENTO ;
             } else {//Caso de seleccionar comprar y no estar registrado
                 acceso = LOGIN;
             }
+        } else if (action.equalsIgnoreCase("AsientoReservado")) {
+            
+            Vuelo vuelo = (Vuelo) session.getAttribute("vueloSeleccionado");
+            Avion avion = (Avion) session.getAttribute("avionSeleccionado");
+            Cliente cliente = (Cliente) session.getAttribute("cliente");
+            HistoricoCompra historico = new HistoricoCompra(vuelo.getIdVuelo(), cliente.getIdCliente());
+            
+            avion.setCantPasajeros(avion.getCantPasajeros() - 1);
+            modelo.modificarAvion(avion);
+            String asientoSeleccionado = request.getParameter("asientoSeleccionado");
+            DetalleAsiento detalle = new DetalleAsiento(vuelo.getIdVuelo(),asientoSeleccionado);
+            
+            try {
+                modelo.insertarHistoricoCompra(historico);
+                modelo.insertarDetalleAsiento(detalle);
+                ArrayList<DetalleHistoricoCompra> historicoCompras = modelo.listarDetalleHistoricoComprasCliente(cliente.getIdCliente());
+                session.setAttribute("historicoCompras", historicoCompras);
+                
+            } catch (Exception ex) {
+                Logger.getLogger(ControladorWCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            acceso = INICIO_CLIENTE;
         }
         RequestDispatcher vista = request.getRequestDispatcher(acceso);
         vista.forward(request, response);
