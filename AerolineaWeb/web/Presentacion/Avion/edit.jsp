@@ -15,6 +15,9 @@
         <%@ include file="/Presentacion/head.jsp" %>
     </head>
     <body>
+        <!--NAVBAR-->
+        <%@ include file="/Presentacion/header.jsp" %>
+        <!-- FIN NAVBAR -->
         <div class="m-0 vh-100 row justify-content-center align-items-center" >
             <div class="row justify-content-center align-items-center minh-100">
                 <div class="col-lg-4 ">

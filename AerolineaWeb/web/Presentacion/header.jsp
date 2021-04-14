@@ -27,6 +27,9 @@
         <%} else {%>
         <%if (usuario.getTipo() == 0) {%>
         <li class="nav-item">
+            <a class="nav-link" href="ControladorRuta?accion=list" tabindex="-1" aria-disabled="true">Gestión Rutas</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="ControladorAvion?accion=list" tabindex="-1" aria-disabled="true">Gestión Aviones</a>
         </li>
         <li class="nav-item">

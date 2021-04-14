@@ -4,6 +4,10 @@
         <servlet-name>ControladorWLogin</servlet-name>
         <servlet-class>ControladoresWeb.ControladorWLogin</servlet-class>
     </servlet>
+     <servlet>
+        <servlet-name>ControladorRuta</servlet-name>
+        <servlet-class>ControladoresWeb.ControladorRuta</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>ControladorWCliente</servlet-name>
         <servlet-class>ControladoresWeb.ControladorWCliente</servlet-class>
@@ -19,6 +23,10 @@
     <servlet-mapping>
         <servlet-name>ControladorWLogin</servlet-name>
         <url-pattern>/ControladorWLogin</url-pattern>
+    </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>ControladorRuta</servlet-name>
+        <url-pattern>/ControladorRuta</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ControladorWCliente</servlet-name>
