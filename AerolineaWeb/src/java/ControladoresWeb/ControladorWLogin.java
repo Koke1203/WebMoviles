@@ -34,7 +34,8 @@ import javax.servlet.http.HttpSession;
 public class ControladorWLogin extends HttpServlet {
 
     private final String INICIO = "index.jsp";
-    private final String INICIO_ADMINISTRADOR = "/Presentacion/Administrador/inicio.jsp";
+    //private final String INICIO_ADMINISTRADOR = "/Presentacion/Administrador/inicio.jsp";
+    private final String INICIO_ADMINISTRADOR = "/Presentacion/Ruta/list.jsp";
     private final String INICIO_CLIENTE = "/Presentacion/Cliente/inicio.jsp";
     private final String CONSULTA_VUELOS = "/Presentacion/General/list.jsp";
     private final String INICIO_SESION = "/Presentacion/Login/login.jsp";

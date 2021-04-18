@@ -31,12 +31,24 @@
             }
             
         %>
-        
+
         <div class="container">
             <div class="row justify-content-center align-items-center minh-100">
                 <div class="col-lg-">
                     <h1>Vuelos</h1>
-                    <table class="table table-hover">
+                    
+                    <div class="row justify-content-center align-items-center minh-100">
+                        <div class="col-lg-4 ">
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control" type="text" name="txtFiltrado" placeholder="Filtro" id="searchTerm" onkeyup="doSearch()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <table class="table table-hover" id="datos">
                         <thead>
                             <tr>
                                 <th scope="col">ID Vuelo</th>

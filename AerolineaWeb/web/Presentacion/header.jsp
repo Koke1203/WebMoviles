@@ -33,6 +33,9 @@
             <a class="nav-link" href="ControladorAvion?accion=list" tabindex="-1" aria-disabled="true">Gestión Aviones</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="ControladorWAdministrador?accion=listarVuelos" tabindex="-1" aria-disabled="true">Gestión Vuelos</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="ControladorWAdministrador?accion=GestionarAdministradores" tabindex="-1" aria-disabled="true">Gestión Administradores</a>
         </li>
         <li class="nav-item">
